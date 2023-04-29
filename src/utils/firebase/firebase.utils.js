@@ -8,7 +8,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-} from 'firebase/auth';
+} from "firebase/auth";
 import {
   getFirestore,
   doc,
@@ -18,10 +18,10 @@ import {
   writeBatch,
   query,
   getDocs,
-} from 'firebase/firestore';
+} from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDVZf_UvYagpg1SJqZIQV2Sp77uHaru0wA",
+  apiKey: import.meta.env.VITE_REACT_APP_FIREBASE_API_KEY,
   authDomain: "crwn-clothing-db-18c1c.firebaseapp.com",
   projectId: "crwn-clothing-db-18c1c",
   storageBucket: "crwn-clothing-db-18c1c.appspot.com",
@@ -59,11 +59,11 @@ export const addCollectionAndDocuments = async (
   });
 
   await batch.commit();
-  console.log('done');
+  console.log("done");
 };
 
 export const getCategoriesAndDocuments = async () => {
-  const collectionRef = collection(db, 'categories');
+  const collectionRef = collection(db, "categories");
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
