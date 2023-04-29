@@ -1,0 +1,59 @@
+{
+  "name": "react-learning-crwn-clothing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@testing-library/jest-dom": "5.16.1",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/user-event": "13.5.0",
+    "firebase": "^9.19.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "7.2.6",
+    "react-router-dom": "6",
+    "react-scripts": "5.0.0",
+    "redux": "4.1.2",
+    "redux-logger": "3.0.6",
+    "redux-persist": "6.0.0",
+    "reselect": "4.1.5",
+    "sass": "1.49.7",
+    "styled-components": "5.3.3",
+    "vite-plugin-svgr": "^2.4.0",
+    "web-vitals": "2.1.4"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "vite": "^4.3.2"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
