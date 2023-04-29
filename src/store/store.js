@@ -11,20 +11,7 @@ const composeEnhancers =
       })
     : compose;
 
-// const loggerMiddleware = (store) => (next) => (action) => {
-//   if (!action.type) {
-//     return next(action);
-//   }
-
-//   console.log("type", action.type);
-//   console.log("payload", action.pyaload);
-//   console.log("currentSate", store.getState());
-
-//   next(action);
-//   console.log("next state: ", store.getState());
-// };
-
-const middleWares = [process.env.NODE_ENV === "development" && logger];
+const middleWares = process.env.NODE_ENV === "development" ? [logger] : [];
 
 const composedEnhancers = composeEnhancers(applyMiddleware(...middleWares));
 
