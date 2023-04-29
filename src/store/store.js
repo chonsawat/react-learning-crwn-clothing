@@ -9,7 +9,7 @@ import { rootReducer } from "./root-reducer";
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["user"],
+  whitelist: ["cart"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -22,7 +22,7 @@ const composeEnhancers =
     : compose;
 
 const middleWares =
-  process.env.NODE_ENV === "development" ? [logger, thunk] : [];
+  import.meta.env.VITE_NODE_ENV === "development" ? [logger, thunk] : [thunk];
 
 const composedEnhancers = composeEnhancers(applyMiddleware(...middleWares));
 
