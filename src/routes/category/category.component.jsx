@@ -22,9 +22,6 @@ const Category = () => {
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
-  console.log("categoriesMap", categoriesMap);
-  console.log("isLoading", isLoading);
-
   return (
     <Fragment>
       <Title>{category.toUpperCase()}</Title>
