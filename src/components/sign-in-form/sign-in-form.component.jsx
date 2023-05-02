@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
@@ -8,8 +10,8 @@ import {
   signInWithGooglePopup,
 } from "../../utils/firebase/firebase.utils";
 
+import { googleSignInStart } from "../../store/user/user.action";
 import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles";
-import { useNavigate } from "react-router-dom";
 
 const defaultFormFields = {
   email: "",
@@ -17,6 +19,7 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const navigate = useNavigate();
@@ -27,7 +30,7 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     try {
-      await signInWithGooglePopup();
+      dispatch(googleSignInStart());
       navigate("/");
     } catch (error) {
       console.log("user sign in failed", error);
