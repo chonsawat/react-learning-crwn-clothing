@@ -25,7 +25,7 @@ const composeEnhancers =
     : compose;
 
 const middleWares =
-  import.meta.env.VITE_NODE_ENV === "development"
+  process.env.NODE_ENV === "development"
     ? [logger, sagaMiddleware]
     : [sagaMiddleware];
 
