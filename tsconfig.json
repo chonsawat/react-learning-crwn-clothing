@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["src", "c:/Users/chons/Downloads/Udemy/code/typescript-example.ts"]
 }

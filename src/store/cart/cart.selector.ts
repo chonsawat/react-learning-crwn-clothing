@@ -1,6 +1,8 @@
 import { createSelector } from "reselect";
+import { CartState } from "./cart.reducer";
+import { AnyAction } from "redux";
 
-const selectCartReducer = (state) => state.cart;
+const selectCartReducer = (state: AnyAction): CartState => state.cart;
 
 export const selectCartItems = createSelector(
   [selectCartReducer],
