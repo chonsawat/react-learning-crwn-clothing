@@ -11,6 +11,7 @@
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.16.3",
+    "@types/redux-logger": "^3.0.9",
     "@vitejs/plugin-basic-ssl": "^1.0.1",
     "dotenv": "^16.0.3",
     "firebase": "^9.19.1",

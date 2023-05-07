@@ -23,7 +23,7 @@ import {
   getDocs,
   QueryDocumentSnapshot,
 } from "firebase/firestore";
-import { Category } from "../../store/categories/categories.types";
+import { Category } from "../../store/categories/category.types";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,

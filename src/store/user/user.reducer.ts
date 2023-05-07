@@ -10,18 +10,21 @@ import {
 import { UserData } from "../../utils/firebase/firebase.utils";
 
 export type UserState = {
-  readonly currentUser: UserData;
-  readonly loading: boolean;
-  readonly error: string;
+  readonly currentUser: UserData | null;
+  readonly isLoading: boolean;
+  readonly error: Error | null;
 };
 
-const USER_INITIAL_STATE = {
+const USER_INITIAL_STATE: UserState = {
   currentUser: null,
   isLoading: false,
   error: null,
 };
 
-export const userReducer = (state = USER_INITIAL_STATE, action: AnyAction) => {
+export const userReducer = (
+  state = USER_INITIAL_STATE,
+  action: AnyAction
+): UserState => {
   if (signInSuccess.match(action)) {
     return { ...state, currentUser: action.payload };
   }

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { selectCategoriesIsLoad } from "../../store/categories/categories.selector";
+import { selectCategoriesIsLoad } from "../../store/categories/category.selector";
 
 import ProductCard from "../product-card/product-card.component";
 import Spinner from "../spinner/spinner.component";

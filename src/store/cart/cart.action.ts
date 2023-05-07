@@ -1,5 +1,5 @@
 import { CART_ACTION_TYPES, CartItem } from "./cart.types";
-import { CategoryItem } from "../categories/categories.types";
+import { CategoryItem } from "../categories/category.types";
 import {
   ActionWithPayload,
   createAction,

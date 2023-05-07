@@ -1,6 +1,7 @@
 import { createSelector } from "reselect";
-import { CategoryMap, CategoryState } from "./categories.reducer";
+import { CategoryState } from "./category.reducer";
 import { AnyAction } from "redux";
+import { CategoryMap } from "./category.types";
 
 const selectCategoriesReducer = (state: AnyAction): CategoryState =>
   state.categories;

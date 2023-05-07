@@ -41,7 +41,7 @@ export const signInSuccess = withMatcher((user: UserData) =>
   createAction(USER_ACTION_TYPES.SIGN_IN_SUCCESS, user)
 );
 
-export const signInFailed = withMatcher((error: string) =>
+export const signInFailed = withMatcher((error: Error) =>
   createAction(USER_ACTION_TYPES.SIGN_IN_FAILED, error)
 );
 
@@ -53,7 +53,7 @@ export const signOutSuccess = withMatcher(() =>
   createAction(USER_ACTION_TYPES.SIGN_OUT_SUCCESS)
 );
 
-export const signOutFailed = withMatcher((error: string) =>
+export const signOutFailed = withMatcher((error: Error) =>
   createAction(USER_ACTION_TYPES.SIGN_OUT_FAIL, error)
 );
 
@@ -71,6 +71,6 @@ export const signUpSuccess = withMatcher(
     createAction(USER_ACTION_TYPES.SIGN_UP_SUCCESS, { user, additionalDetail })
 );
 
-export const signUpFailed = withMatcher((error: string) =>
+export const signUpFailed = withMatcher((error: Error) =>
   createAction(USER_ACTION_TYPES.SIGN_UP_FAIL, error)
 );

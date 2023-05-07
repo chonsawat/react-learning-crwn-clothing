@@ -1,4 +1,4 @@
-import { CategoryItem } from "../categories/categories.types";
+import { CategoryItem } from "../categories/category.types";
 
 export enum CART_ACTION_TYPES {
   SET_IS_CART_OPEN = "SET_IS_CART_OPEN",
