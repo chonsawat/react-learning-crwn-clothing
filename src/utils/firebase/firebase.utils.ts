@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -23,6 +22,7 @@ import {
   getDocs,
   QueryDocumentSnapshot,
 } from "firebase/firestore";
+
 import { Category } from "../../store/categories/category.types";
 
 const firebaseConfig = {
@@ -53,6 +53,7 @@ export const db = getFirestore();
 export type ObjectToAdd = {
   title: string;
 };
+
 export const addCollectionAndDocuments = async <T extends ObjectToAdd>(
   collectionKey: string,
   objectsToAdd: T[]
@@ -74,7 +75,9 @@ export const getCategoriesAndDocuments = async (): Promise<Category[]> => {
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map((doc) => doc.data() as Category);
+  return querySnapshot.docs.map(
+    (docSnapshot) => docSnapshot.data() as Category
+  );
 };
 
 export type AdditionalInformation = {
@@ -82,15 +85,15 @@ export type AdditionalInformation = {
 };
 
 export type UserData = {
-  createAt: Date;
+  createdAt: Date;
   displayName: string;
   email: string;
 };
 
 export const createUserDocumentFromAuth = async (
   userAuth: User,
-  additionalInformation: AdditionalInformation
-): Promise<QueryDocumentSnapshot<UserData> | void> => {
+  additionalInformation = {} as AdditionalInformation
+): Promise<void | QueryDocumentSnapshot<UserData>> => {
   if (!userAuth) return;
 
   const userDocRef = doc(db, "users", userAuth.uid);
